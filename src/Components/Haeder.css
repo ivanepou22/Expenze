@@ -1,0 +1,26 @@
+.admin-header {
+    position: fixed !important;
+    top: 0;
+}
+
+.admin-breads {
+    margin-top: 6rem !important;
+}
+
+.row-add {
+    padding: 1rem 3rem !important;
+    background-color: white !important;
+    text-align: right !important;
+}
+
+.nav-social {
+    display: flex !important;
+}
+
+.user-login {
+    display: flex !important;
+}
+
+.right-menu {
+    margin-right: -6rem !important;
+}
