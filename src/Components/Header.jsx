@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Haeder.css'
+import Logo from '../assets/images/Logo.png';
 
 const Header = () => {
     return (
@@ -54,31 +55,14 @@ const Header = () => {
                 {/* <!-- Start Header Bottom --> */}
                 <div className="container">
                     <div className="row align-items-center">
-                        <div className="col-lg-8 col-md-6 col-12">
+                        <div className="col-lg-12 col-md-6 col-12 middle-menu">
                             <div className="nav-inner">
                                 {/* <!-- Start Mega Category Menu --> */}
-                                <div className="mega-category-menu">
-                                    <span className="cat-button"><i className="lni lni-menu"></i> Admin</span>
-                                    <ul className="sub-category">
-                                        <li><Link to="/">Journals <i className="lni lni-chevron-right"></i></Link>
-                                            <ul className="inner-sub-category">
-                                                <li><Link to="/">General Journals</Link></li>
-                                                <li><Link to="/">Cash Receipt Journals</Link></li>
-                                                <li><Link to="/">Payment Journals</Link></li>
-                                                <li><Link to="/">Sales Journals</Link></li>
-                                                <li><Link to="/">Purchase Journals</Link></li>
-                                            </ul>
-                                        </li>
-                                        <li><Link to="/">Chart of accounts</Link></li>
-                                        <li><Link to="/">Bank Accounts</Link></li>
-                                        <li><Link to="/">Bank Account Groups</Link></li>
-                                        <li><Link to="/">Posted Documents<i className="lni lni-chevron-right"></i></Link>
-                                            <ul className="inner-sub-category">
-                                                <li><Link to="/">General Ledger Entries</Link></li>
-                                                <li><Link to="/">Bank Acc. Ledger Entries</Link></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                <div className="header-logo">
+                                    {/* Company name */}
+                                    <div className="logo">
+                                        <Link to="/"><img src={Logo} alt="Logo" /></Link>
+                                    </div>
                                 </div>
                                 {/* <!-- End Mega Category Menu --> */}
                                 {/* <!-- Start Navbar --> */}
@@ -98,25 +82,47 @@ const Header = () => {
                                             <li className="nav-item">
                                                 <Link className="dd-menu collapsed" to="/" data-bs-toggle="collapse"
                                                     data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent"
-                                                    aria-expanded="false" aria-label="Toggle navigation">Account</Link>
+                                                    aria-expanded="false" aria-label="Toggle navigation">Administration</Link>
                                                 <ul className="sub-menu collapse" id="submenu-1-2">
-                                                    <li className="nav-item"><Link to="/">My Account</Link></li>
-                                                    <li className="nav-item"><Link to="/">Inbox</Link></li>
-                                                    <li className="nav-item"><Link to="/">Orders</Link></li>
+                                                    <li className="nav-item"><Link to="/">Chart of Accounts</Link></li>
+                                                    <li className="nav-item"><Link to="/">Journal Templates</Link></li>
+                                                    <li className="nav-item"><Link to="/bankaccountpostinggroups">Bank Acc. Posting Groups</Link></li>
+                                                </ul>
+                                            </li>
+                                            <li className="nav-item">
+                                                <Link className="dd-menu collapsed" to="/" data-bs-toggle="collapse"
+                                                    data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent"
+                                                    aria-expanded="false" aria-label="Toggle navigation">Journals</Link>
+                                                <ul className="sub-menu collapse" id="submenu-1-2">
+                                                    <li className="nav-item"><Link to="/">General Journals</Link></li>
+                                                    <li className="nav-item"><Link to="/">Cash Receipts Journals</Link></li>
+                                                    <li className="nav-item"><Link to="/">Payment Journals</Link></li>
+                                                    <li className="nav-item"><Link to="/">Sales Journals</Link></li>
+                                                    <li className="nav-item"><Link to="/">Purchase Journals</Link></li>
                                                 </ul>
                                             </li>
                                             <li className="nav-item">
                                                 <Link className="dd-menu collapsed" to="/" data-bs-toggle="collapse"
                                                     data-bs-target="#submenu-1-3" aria-controls="navbarSupportedContent"
-                                                    aria-expanded="false" aria-label="Toggle navigation">Admin</Link>
+                                                    aria-expanded="false" aria-label="Toggle navigation">Cash Management</Link>
                                                 <ul className="sub-menu collapse" id="submenu-1-3">
-                                                    <li className="nav-item"><Link to="/">Products</Link></li>
-                                                    <li className="nav-item"><Link to="/">Categories</Link></li>
-                                                    <li className="nav-item"><Link to="/">Orders</Link></li>
-                                                    <li className="nav-item"><Link to="/">Users</Link></li>
+                                                    <li className="nav-item"><Link to="/">Bank Accounts</Link></li>
+                                                    <li className="nav-item"><Link to="/bankaccountpostinggroups">Bank Acc. Posting Groups</Link></li>
+                                                    <li className="nav-item"><Link to="/">Bank Acc. Ledger Entries</Link></li>
+                                                    <li className="nav-item"><Link to="/">Bank Acc. Reconciliations</Link></li>
+                                                    <li className="nav-item"><Link to="/">Posted Bank Acc. Recons.</Link></li>
                                                 </ul>
                                             </li>
-
+                                            <li className="nav-item">
+                                                <Link className="dd-menu collapsed" to="/" data-bs-toggle="collapse"
+                                                    data-bs-target="#submenu-1-3" aria-controls="navbarSupportedContent"
+                                                    aria-expanded="false" aria-label="Toggle navigation">Posted Documents</Link>
+                                                <ul className="sub-menu collapse" id="submenu-1-3">
+                                                    <li className="nav-item"><Link to="/">General Ledger Entries</Link></li>
+                                                    <li className="nav-item"><Link to="/">Bank Acc. Ledger Entries</Link></li>
+                                                    <li className="nav-item"><Link to="/">Posted Bank Acc. Recons.</Link></li>
+                                                </ul>
+                                            </li>
                                         </ul>
                                     </div>
                                     {/* <!-- navbar collapse --> */}
@@ -124,6 +130,7 @@ const Header = () => {
                                 {/* <!-- End Navbar --> */}
                             </div>
                         </div>
+
                     </div>
                 </div>
                 {/* <!-- End Header Bottom --> */}
