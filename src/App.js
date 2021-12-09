@@ -1,6 +1,6 @@
 import Header from './Components/Header';
 import Dashboard from './Pages/Dashboard';
-import {BrowserRouter as Router , Route, Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import BankAccPostingGroups from './Pages/BankAccPostingGroups';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
@@ -9,13 +9,13 @@ import { auth } from './firebase';
 import { useEffect } from 'react';
 
 function App() {
-  const [{user}, dispatch] = useStateValue();
+  const [{ user }, dispatch] = useStateValue();
   console.log(user);
   //piece of code which runs based on a given condition
   //useEfect hook
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
-      if(authUser) {
+      if (authUser) {
         //user is logged in
         dispatch({
           type: 'SET_USER',
@@ -34,7 +34,7 @@ function App() {
       unsubscribe();
     };
 
-  }, [])
+  }, [dispatch])
 
   return (
     <div className="app">

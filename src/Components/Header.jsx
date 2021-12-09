@@ -2,8 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Haeder.css'
 import Logo from '../assets/images/Logo.png';
+import { useStateValue } from '../Context/StateProvider';
+import Avatar from 'react-avatar';
 
 const Header = () => {
+    const [{ user }] = useStateValue();
     return (
         <>
             {/* <!-- Start Header Area --> */}
@@ -28,6 +31,7 @@ const Header = () => {
                                 <div className="top-end right-menu">
                                     <div className="nav-social">
                                         <ul className="user-login">
+
                                             <li>
                                                 <Link to="/"><i className="lni lni-search-alt"></i></Link>
                                             </li>
@@ -41,8 +45,15 @@ const Header = () => {
                                                 <Link to="/"><i className="lni lni-help"></i></Link>
                                             </li>
                                             <li>
-                                                <Link to="/"><i className="lni lni-users"></i></Link>
+                                                {
+                                                    user?.photoURL === undefined ? (
+                                                        <img src={user?.photoURL} alt="user" className="profile-picture" />
+                                                    ) : (
+                                                        <Avatar name={user.displayName} size="36" className="profile-avatar" round={true} />
+                                                    )
+                                                }
                                             </li>
+
                                         </ul>
                                     </div>
                                 </div>
